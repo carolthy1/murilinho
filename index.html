@@ -7,11 +7,12 @@
     <link rel="stylesheet" href="output.css" />
     <style>
       body {
-        background-color: #c2d3cb; /* Alterando a cor de fundo */
+        background-color: #c2d3cb;
         display: flex;
         align-items: center;
         justify-content: center;
         height: 100vh;
+        margin: 0;
       }
 
       .card {
@@ -20,9 +21,11 @@
         border-radius: 8px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         display: flex;
-        margin-left: 500px;
-        margin-right: 500px;
+        flex-direction: column;
         text-align: justify;
+        max-width: 100%;
+        margin-left: 500px; /* Adapte a margem conforme necessário */
+        margin-right: 500px;
       }
 
       .text-container {
@@ -41,13 +44,31 @@
 
       .image-container {
         flex-shrink: 0;
-        margin-left: 1rem;
+        margin-top: 1rem;
       }
 
       .image-container img {
         width: auto;
         height: 420px;
         border-radius: 5%;
+        margin-left: 20px;
+      }
+
+      @media (min-width: 768px) {
+        .card {
+          flex-direction: row;
+          align-items: center;
+        }
+
+        .text-container {
+          flex: 1;
+          margin-right: 1rem;
+        }
+
+        .image-container {
+          flex-shrink: 0;
+          margin-top: 0;
+        }
       }
     </style>
   </head>

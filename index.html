@@ -69,6 +69,26 @@
           flex-shrink: 0;
           margin-top: 0;
         }
+
+        #audio-controls {
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          display: flex;
+          align-items: center;
+        }
+
+        #audio-controls button {
+          background: none;
+          border: none;
+          cursor: pointer;
+          padding: 0;
+        }
+
+        #audio-controls img {
+          width: 30px; /* ajuste conforme necessário */
+          height: 30px; /* ajuste conforme necessário */
+        }
       }
     </style>
   </head>
@@ -107,5 +127,29 @@
         <img src="img\murillo.png" alt="Imagem do Bebê" />
       </div>
     </div>
+
+    <div id="audio-controls">
+      <button onclick="toggleAudio()">
+        <img
+          src="img\volume_up_FILL0_wght400_GRAD0_opsz24.png"
+          alt="Ícone de Áudio"
+        />
+      </button>
+      <audio id="lullaby" loop>
+        <source src="img\forest-lullaby-110624.mp3" type="audio/mp3" />
+        Seu navegador não suporta o elemento de áudio.
+      </audio>
+    </div>
+
+    <script>
+      function toggleAudio() {
+        var audio = document.getElementById("lullaby");
+        if (audio.paused) {
+          audio.play();
+        } else {
+          audio.pause();
+        }
+      }
+    </script>
   </body>
 </html>
